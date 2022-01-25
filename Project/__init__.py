@@ -46,24 +46,24 @@ from linebot import (
 #       conv=conv)
       
 # connect to database
-try:
-    conn = mariadb.connect(
-        user="root",
-        password="123456",
-        host="localhost",
-        port=3306,
-        database="data"
-    )
-except mariadb.Error as e:
-    print(e)
-    print(f"Error connecting to MariaDB Platform: {e}")
-    sys.exit(1)
+# try:
+#     conn = mariadb.connect(
+#         user="root",
+#         password="123456",
+#         host="localhost",
+#         port=3306,
+#         database="data"
+#     )
+# except mariadb.Error as e:
+#     print(e)
+#     print(f"Error connecting to MariaDB Platform: {e}")
+#     sys.exit(1)
 
-print(conn)
-mycursor = conn.cursor()
+# print(conn)
+# mycursor = conn.cursor()
 
 app = Flask(__name__)
-cache = redis.Redis(host='redis', port=6379)
+# cache = redis.Redis(host='redis', port=6379)
 
 line_bot_api = LineBotApi(channel_access_token)
 
@@ -130,11 +130,11 @@ def event_handle(event):
         # myresult = mycursor.fetchall()
         # print(myresult)
 
-        sql = "SELECT  s.studentcode,s.studentname,s.studentsurname,s.prefixname,s.line_userID,t.acadyear,t.semester,t.coursecode,t.coursename,t.studytype,t.weekday,t.timefrom,t.timeto,t.sec,t.room FROM studentaccount s , timetable t WHERE s.studentID = t.studentID and s.line_userID = %s "
-        val = (userId,)
-        mycursor.execute(sql,val)
-        myresult = mycursor.fetchall()
-        print(myresult)
+#         sql = "SELECT  s.studentcode,s.studentname,s.studentsurname,s.prefixname,s.line_userID,t.acadyear,t.semester,t.coursecode,t.coursename,t.studytype,t.weekday,t.timefrom,t.timeto,t.sec,t.room FROM studentaccount s , timetable t WHERE s.studentID = t.studentID and s.line_userID = %s "
+#         val = (userId,)
+#         mycursor.execute(sql,val)
+#         myresult = mycursor.fetchall()
+#         print(myresult)
 
     except:
         print('error cannot get userId')
