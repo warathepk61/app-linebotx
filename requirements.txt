@@ -2,7 +2,7 @@
 gunicorn==20.1.0
 line-bot-sdk==2.0.1
 mysql-connector-python==8.0.28
-mariadb==1.0.9
+mariadb==10.7.1
 numpy==1.22.1
 redis==4.1.1
 requests==2.27.1
