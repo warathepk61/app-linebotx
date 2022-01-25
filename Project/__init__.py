@@ -4,7 +4,7 @@ from time import time
 from flask import Flask, request, jsonify,abort
 import json
 import requests
-import mariadb
+# import mariadb
 import redis
 import io 
 import os
