@@ -168,7 +168,7 @@ def handle_text(inpmessage):
       flex = json.loads(flex)     # convert json string to python dict
       # print(flex)
       replyObj = FlexSendMessage(alt_text='ตารางเรียนของคุณ', contents=flex)
-    #   print(replyObj)
+   #   print(replyObj)
     else:
       replyObj = TextSendMessage(text=inpmessage)
 
@@ -177,14 +177,14 @@ def handle_text(inpmessage):
       flex = json.loads(flex)     # convert json string to python dict
     #   print(flex)
       replyObj = FlexSendMessage(alt_text='ตารางสอบของคุณ', contents=flex)
-    #   print(replyObj)     
+      print(replyObj)     
 
     if inpmessage == 'สอบถามเกรด':
       flex = grades()
       flex = json.loads(flex)     # convert json string to python dict
     #   print(flex)
       replyObj = FlexSendMessage(alt_text='เกรดของคุณ', contents=flex)
-    #   print(replyObj)    
+      print(replyObj)    
 
     if 'สวัสดี' in inpmessage :
         replyObj = TextSendMessage(text='สวัสดีค่ะ')
