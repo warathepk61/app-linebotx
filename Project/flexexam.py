@@ -2,6 +2,13 @@ def examtable():
       flex = '''{
   "type": "bubble",
   "direction": "ltr",
+  "hero": {
+    "type": "image",
+    "url": "https://sv1.picz.in.th/images/2022/02/11/rYV0LP.png",
+    "size": "full",
+    "aspectRatio": "12:5",
+    "aspectMode": "cover"
+  },
   "body": {
     "type": "box",
     "layout": "vertical",
@@ -31,7 +38,7 @@ def examtable():
       {
         "type": "box",
         "layout": "vertical",
-        "margin": "lg",
+        "margin": "sm",
         "contents": [
           {
             "type": "text",
@@ -46,18 +53,10 @@ def examtable():
             "contents": [
               {
                 "type": "text",
-                "text": "001201",
+                "text": "001201 Population",
                 "size": "sm",
                 "weight": "bold",
                 "flex": 0
-              },
-              {
-                "type": "text",
-                "wrap": false,
-                "size": "sm",
-                "flex": 5,
-                "text": "Communicative English for Academic Analysis in Computer Technology",
-                "weight": "bold"
               }
             ]
           },
@@ -87,7 +86,7 @@ def examtable():
             "contents": [
               {
                 "type": "text",
-                "text": "sec : 2",
+                "text": "sec : 2  ",
                 "size": "sm",
                 "flex": 4,
                 "wrap": true
@@ -110,8 +109,8 @@ def examtable():
           {
             "type": "box",
             "layout": "vertical",
-            "margin": "lg",
-            "spacing": "sm",
+            "margin": "none",
+            "spacing": "none",
             "contents": [
               {
                 "type": "box",
@@ -120,18 +119,10 @@ def examtable():
                 "contents": [
                   {
                     "type": "text",
-                    "text": "001202",
+                    "text": "001202 Internet Programming",
                     "size": "sm",
                     "weight": "bold",
                     "flex": 0
-                  },
-                  {
-                    "type": "text",
-                    "wrap": false,
-                    "size": "sm",
-                    "flex": 5,
-                    "text": "Discrete Mathematics for Computer Science",
-                    "weight": "bold"
                   }
                 ]
               },
@@ -202,18 +193,10 @@ def examtable():
             "contents": [
               {
                 "type": "text",
-                "text": "254261-5 ",
+                "text": "001203 Internet of Things",
                 "size": "sm",
                 "weight": "bold",
                 "flex": 0
-              },
-              {
-                "type": "text",
-                "wrap": false,
-                "size": "sm",
-                "flex": 5,
-                "text": "Computer Architecture",
-                "weight": "bold"
               }
             ]
           },
@@ -282,18 +265,10 @@ def examtable():
             "contents": [
               {
                 "type": "text",
-                "text": "001208",
+                "text": "001204 Communicative English for Academic Analysis in Computer Technology",
                 "size": "sm",
                 "weight": "bold",
                 "flex": 0
-              },
-              {
-                "type": "text",
-                "wrap": false,
-                "size": "sm",
-                "flex": 5,
-                "text": "Statistical Analysis",
-                "weight": "bold"
               }
             ]
           },
@@ -345,7 +320,7 @@ def examtable():
           {
             "type": "box",
             "layout": "vertical",
-            "margin": "lg",
+            "margin": "none",
             "spacing": "sm",
             "contents": [
               {
@@ -355,18 +330,10 @@ def examtable():
                 "contents": [
                   {
                     "type": "text",
-                    "text": "001205",
+                    "text": "001205 Robotic",
                     "size": "sm",
                     "weight": "bold",
                     "flex": 0
-                  },
-                  {
-                    "type": "text",
-                    "wrap": false,
-                    "size": "sm",
-                    "flex": 5,
-                    "text": "Data Structure",
-                    "weight": "bold"
                   }
                 ]
               },
@@ -437,18 +404,10 @@ def examtable():
             "contents": [
               {
                 "type": "text",
-                "text": "254245-1 ",
+                "text": "001206 Software Engineer",
                 "size": "sm",
                 "weight": "bold",
                 "flex": 0
-              },
-              {
-                "type": "text",
-                "wrap": false,
-                "size": "sm",
-                "flex": 5,
-                "text": "Introductory Biology",
-                "weight": "bold"
               }
             ]
           },
@@ -517,17 +476,10 @@ def examtable():
             "contents": [
               {
                 "type": "text",
-                "text": "223134-2",
+                "text": "001207 Artificial Intelligence",
                 "size": "sm",
                 "weight": "bold",
                 "flex": 0
-              },
-              {
-                "type": "text",
-                "size": "sm",
-                "flex": 5,
-                "text": "Multimedia and Web Technology",
-                "weight": "bold"
               }
             ]
           },
@@ -546,6 +498,65 @@ def examtable():
               {
                 "type": "text",
                 "text": "room : QS2201",
+                "flex": 10,
+                "size": "sm"
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "baseline",
+            "contents": [
+              {
+                "type": "text",
+                "text": "sec : 2",
+                "size": "sm",
+                "flex": 4
+              },
+              {
+                "type": "text",
+                "text": "seat number : 60",
+                "flex": 10,
+                "size": "sm"
+              },
+              {
+                "type": "text",
+                "text": "midterm",
+                "flex": 8,
+                "weight": "regular",
+                "style": "italic"
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "baseline",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "text",
+                "text": "001208 Samena",
+                "size": "sm",
+                "weight": "bold",
+                "flex": 0
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "baseline",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "text",
+                "text": "time : 15:00- 17:00",
+                "wrap": true,
+                "size": "sm",
+                "flex": 10
+              },
+              {
+                "type": "text",
+                "text": "room : SC2-208",
                 "flex": 10,
                 "size": "sm"
               }
