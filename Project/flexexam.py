@@ -1,5 +1,5 @@
 def examtable():
-      flex = '''{
+      flex = {
   "type": "bubble",
   "direction": "ltr",
   "body": {
@@ -580,5 +580,5 @@ def examtable():
       }
     ]
   }
-}'''
+}
       return flex
