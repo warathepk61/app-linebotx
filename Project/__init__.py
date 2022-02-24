@@ -17,6 +17,9 @@ from Project.config import *   # folder Project file config
 from Project.flextimetable import *   # folder Project file flextimetable
 from Project.flexexam import *   # folder Project file flexexamtable
 from Project.grades import *  # folder Project file gradess
+from Project.regis import *  # folder Project file regis
+from Project.payment import *  # folder Project file payment
+from Project.contact import *  # folder Project file contact
 
 from linebot.models import (
     MessageEvent, TextMessage, TextSendMessage,TemplateSendMessage,ImageSendMessage, StickerSendMessage, AudioSendMessage, FlexSendMessage
@@ -163,34 +166,157 @@ def event_handle(event):
 
 from linebot.models import (TextSendMessage,FlexSendMessage)
 def handle_text(inpmessage):
-    if inpmessage == 'สอบถามตารางเรียน':
-      flex = flex_timetable()
-      flex = json.loads(flex)     # convert json string to python dict
-      # print(flex)
-      replyObj = FlexSendMessage(alt_text='ตารางเรียนของคุณ', contents=flex)
-   #   print(replyObj)
-    else:
-      replyObj = TextSendMessage(text=inpmessage)
+     if "สอบถามตารางเรียน / class schedule" in message:               
+                flex = flex_timetable()
+                print(flex)
+                flexdict = json.loads(flex)     # convert json string to python dict
+                print(flexdict)
+                replyObj = FlexSendMessage(alt_text='ตารางเรียนของคุณ', contents=flex)
+                #  print(replyObj)
+                    
+        
+        # time exam test
+    if "สอบถามตารางสอบ / exam schedule" in message:
+                flex = flex_timeexam()
+                print(flex)
+                flexdict = json.loads(flex)     # convert json string to python dict
+                print(flexdict)
+                replyObj = FlexSendMessage(alt_text='ตารางเรียนของคุณ', contents=flexdict)
+            #   print(replyObj)
 
-    if inpmessage == 'สอบถามตารางสอบ':
-      flex = examtable()
-      flex = json.loads(flex)     # convert json string to python dict
-    #   print(flex)
-      replyObj = FlexSendMessage(alt_text='ตารางสอบของคุณ', contents=flex)
-      print(replyObj)     
+            # grade table test
+    if "สอบถามผลการศึกษา / grade result" in message:               
+                flex = flex_grades()
+                print(flex)
+                flexdict = json.loads(flex)     # convert json string to python dict
+                print(flexdict)
+                replyObj = FlexSendMessage(alt_text='ตารางเรียนของคุณ', contents=flexdict)
+            #   print(replyObj)
 
-    if inpmessage == 'สอบถามเกรด':
-      flex = grades()
-      flex = json.loads(flex)     # convert json string to python dict
-    #   print(flex)
-      replyObj = FlexSendMessage(alt_text='เกรดของคุณ', contents=flex)
-      print(replyObj)    
+    if "ระบบทะเบียนออนไลน์ / registration" in message :
+            flex = flex_regismenu()
+            print(flex)
+            flexdict = json.loads(flex)     # convert json string to python dict
+            print(flexdict)
+            replyObj = FlexSendMessage(alt_text='การลงทะเบียนออนไลน์', contents=flexdict)
+            # print(replyObj)
+        
+    if "เตรียมพร้อมก่อนการลงทะเบียน" in message :
+            flex = flex_regisAnswer1()
+            print(flex)
+            flexdict = json.loads(flex)     # convert json string to python dict                print(flexdict)
+            replyObj = FlexSendMessage(alt_text='เตรียมพร้อมก่อนการลงทะเบียน', contents=flexdict)
+            # print(replyObj)
 
-    if 'สวัสดี' in inpmessage :
-        replyObj = TextSendMessage(text='สวัสดีค่ะ')
+    if "ลืมรหัสผ่านเข้าระบบ" in message :
+            flex = flex_regisAnswer2()
+            print(flex)
+            flexdict = json.loads(flex)     # convert json string to python dict
+            print(flexdict)
+            replyObj = FlexSendMessage(alt_text='ลืมรหัสผ่านเข้าระบบ', contents=flexdict)
+            # print(replyObj)
+
+    if "บัตรประจำตัวนิสิตหาย" in message :
+            flex = flex_regisAnswer3()
+            print(flex)
+            flexdict = json.loads(flex)     # convert json string to python dict
+            print(flexdict)
+            replyObj = FlexSendMessage(alt_text='บัตรประจำตัวนิสิตหาย', contents=flexdict)
+            # print(replyObj)
+                
+    if "เปลี่ยนแปลงข้อมูลส่วนตัว" in message :
+            flex = flex_regisAnswer4()
+            print(flex)
+            flexdict = json.loads(flex)     # convert json string to python dict
+            print(flexdict)
+            replyObj = FlexSendMessage(alt_text='เปลี่ยนแปลงข้อมูลส่วนตัว', contents=flexdict)
+            # print(replyObj)
+                
+    if "ไม่ได้ลงทะเบียนเรียน/ชำระเงิน" in message :
+            flex = flex_regisAnswer5()
+            print(flex)
+            flexdict = json.loads(flex)     # convert json string to python dict
+            print(flexdict)
+            replyObj = FlexSendMessage(alt_text='ไม่ได้ลงทะเบียนเรียน/ชำระเงิน', contents=flexdict)
+            # print(replyObj)
+
+    if "ติดต่อ" in message :
+            flex = flex_regisAnswer6()
+            print(flex)
+            flexdict = json.loads(flex)     # convert json string to python dict
+            print(flexdict)
+            replyObj = FlexSendMessage(alt_text='ติดต่อ', contents=flexdict)
+            # print(replyObj) 
+
+
+    if "การชำระค่าทำเนียมการศึกษา / tuition fee payment" in message : 
+            flex = flex_paymentmenu()
+            print(flex)
+            flexdict = json.loads(flex)     # convert json string to python dict
+            print(flexdict)
+            replyObj = FlexSendMessage(alt_text='การชำระค่าทำเนียมการศึกษา', contents=flexdict)
+            # print(replyObj)
+
+    if "การชำระเงินและพิมพ์ใบแจ้งการชำระเงิน" in message :
+            flex = flex_paymentAnswer1()
+            print(flex)
+            flexdict = json.loads(flex)     # convert json string to python dict
+            print(flexdict)
+            replyObj = FlexSendMessage(alt_text='การชำระเงินและพิมพ์ใบแจ้งการชำระเงิน', contents=flexdict)
+            # print(replyObj) 
+                
+    if "ช่องทางการชำระเงิน" in message :
+            flex = flex_paymentAnswer2()
+            print(flex)
+            flexdict = json.loads(flex)     # convert json string to python dict
+            print(flexdict)
+            replyObj = FlexSendMessage(alt_text='ช่องทางการชำระเงิน', contents=flexdict)
+            # print(replyObj) 
+                
+    if "ตรวจสอบสถานะการชำระเงินและพิมพ์ใบเสร็จ" in message :
+            flex = flex_paymentAnswer3()
+            print(flex)
+            flexdict = json.loads(flex)     # convert json string to python dict
+            print(flexdict)
+            replyObj = FlexSendMessage(alt_text='ตรวจสอบสถานะการชำระเงินและพิมพ์ใบเสร็จ', contents=flexdict)
+            # print(replyObj) 
+
+    if "ติดต่อเพิ่มเติม / contactmore" in message :
+            flex = contact()
+            print(flex)
+            flexdict = json.loads(flex)
+            print(flexdict)
+            replyObj = FlexSendMessage(alt_text='ติดต่อ', contents=flexdict)
+            # print(replyObj)
+
+#     if inpmessage == 'สอบถามตารางเรียน':
+#       flex = flex_timetable()
+#       flex = json.loads(flex)     # convert json string to python dict
+#       # print(flex)
+#       replyObj = FlexSendMessage(alt_text='ตารางเรียนของคุณ', contents=flex)
+#    #   print(replyObj)
+#     else:
+#       replyObj = TextSendMessage(text=inpmessage)
+
+#     if inpmessage == 'สอบถามตารางสอบ':
+#       flex = examtable()
+#       flex = json.loads(flex)     # convert json string to python dict
+#     #   print(flex)
+#       replyObj = FlexSendMessage(alt_text='ตารางสอบของคุณ', contents=flex)
+#       print(replyObj)     
+
+#     if inpmessage == 'สอบถามเกรด':
+#       flex = grades()
+#       flex = json.loads(flex)     # convert json string to python dict
+#     #   print(flex)
+#       replyObj = FlexSendMessage(alt_text='เกรดของคุณ', contents=flex)
+#       print(replyObj)    
+
+#     if 'สวัสดี' in inpmessage :
+#         replyObj = TextSendMessage(text='สวัสดีค่ะ')
   
-    if 'hi' in inpmessage :
-        replyObj = TextSendMessage(text='hello')
+#     if 'hi' in inpmessage :
+#         replyObj = TextSendMessage(text='hello')
 
     return replyObj
 
